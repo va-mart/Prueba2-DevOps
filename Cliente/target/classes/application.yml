@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: clientes
+
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:clientes_db}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  flyway:
+    enabled: true
+    repair: true
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    Veterinaria.Cliente: INFO
+  file:
+    name: logs/clientes.log
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:clave-secreta-jwt-veterinaria-2025-duoc-uc-segura}
+    expiration-ms: 3600000
