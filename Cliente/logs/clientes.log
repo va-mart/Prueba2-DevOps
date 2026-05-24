@@ -1,0 +1,155 @@
+2026-05-10T16:42:00.382-04:00  INFO 29080 --- [clientes] [main] Veterinaria.Cliente.ClienteApplication   : Starting ClienteApplication using Java 21.0.11 with PID 29080 (D:\AnalistaProgramador\fullstack\claude\veterinaria\Cliente\target\classes started by Diego in D:\AnalistaProgramador\fullstack\claude\veterinaria\Cliente)
+2026-05-10T16:42:00.384-04:00  INFO 29080 --- [clientes] [main] Veterinaria.Cliente.ClienteApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-05-10T16:42:01.064-04:00  INFO 29080 --- [clientes] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-10T16:42:01.119-04:00  INFO 29080 --- [clientes] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 1 JPA repository interface.
+2026-05-10T16:42:01.638-04:00  INFO 29080 --- [clientes] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-05-10T16:42:01.651-04:00  INFO 29080 --- [clientes] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-10T16:42:01.651-04:00  INFO 29080 --- [clientes] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-10T16:42:01.717-04:00  INFO 29080 --- [clientes] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-10T16:42:01.718-04:00  INFO 29080 --- [clientes] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1293 ms
+2026-05-10T16:42:01.825-04:00  INFO 29080 --- [clientes] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-10T16:42:02.156-04:00  INFO 29080 --- [clientes] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@443cdaa4
+2026-05-10T16:42:02.159-04:00  INFO 29080 --- [clientes] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-10T16:42:02.243-04:00  INFO 29080 --- [clientes] [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+2026-05-10T16:42:02.243-04:00  INFO 29080 --- [clientes] [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2026-05-10T16:42:02.243-04:00  INFO 29080 --- [clientes] [main] o.f.c.internal.license.VersionPrinter    : 
+2026-05-10T16:42:02.262-04:00  INFO 29080 --- [clientes] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/clientes_db (MySQL 8.4)
+2026-05-10T16:42:02.270-04:00  WARN 29080 --- [clientes] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: MySQL 8.4 is newer than this version of Flyway and support has not been tested. The latest supported version of MySQL is 8.0.
+2026-05-10T16:42:02.293-04:00  INFO 29080 --- [clientes] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table `clientes_db`.`flyway_schema_history` does not exist yet
+2026-05-10T16:42:02.296-04:00  INFO 29080 --- [clientes] [main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.017s)
+2026-05-10T16:42:02.321-04:00  INFO 29080 --- [clientes] [main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table `clientes_db`.`flyway_schema_history` ...
+2026-05-10T16:42:02.387-04:00  INFO 29080 --- [clientes] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `clientes_db`: << Empty Schema >>
+2026-05-10T16:42:02.396-04:00  INFO 29080 --- [clientes] [main] o.f.core.internal.command.DbMigrate      : Migrating schema `clientes_db` to version "1 - init clientes"
+2026-05-10T16:42:02.463-04:00  INFO 29080 --- [clientes] [main] o.f.core.internal.command.DbMigrate      : Successfully applied 1 migration to schema `clientes_db`, now at version v1 (execution time 00:00.045s)
+2026-05-10T16:42:02.548-04:00  INFO 29080 --- [clientes] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-10T16:42:02.620-04:00  INFO 29080 --- [clientes] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-05-10T16:42:02.662-04:00  INFO 29080 --- [clientes] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-10T16:42:02.915-04:00  INFO 29080 --- [clientes] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-10T16:42:03.889-04:00  INFO 29080 --- [clientes] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-10T16:42:03.892-04:00  INFO 29080 --- [clientes] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-10T16:42:04.207-04:00  WARN 29080 --- [clientes] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-10T16:42:04.224-04:00  WARN 29080 --- [clientes] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 3865c829-e9c1-49c1-8067-2a86d0275425
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-05-10T16:42:04.487-04:00  INFO 29080 --- [clientes] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@684eb4a0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@19a4cdea, org.springframework.security.web.context.SecurityContextHolderFilter@4598961d, org.springframework.security.web.header.HeaderWriterFilter@308e465b, org.springframework.web.filter.CorsFilter@434a2a10, org.springframework.security.web.authentication.logout.LogoutFilter@60e5db1d, Veterinaria.Cliente.security.JwtAuthenticationFilter@2dd8ff1d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@48619f15, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@790ea58f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6debf1b8, org.springframework.security.web.session.SessionManagementFilter@23b3afb4, org.springframework.security.web.access.ExceptionTranslationFilter@56bf6f1e, org.springframework.security.web.access.intercept.AuthorizationFilter@45e68fac]
+2026-05-10T16:42:04.755-04:00  INFO 29080 --- [clientes] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2026-05-10T16:42:04.762-04:00  INFO 29080 --- [clientes] [main] Veterinaria.Cliente.ClienteApplication   : Started ClienteApplication in 4.856 seconds (process running for 6.137)
+2026-05-10T16:50:44.432-04:00  INFO 29080 --- [clientes] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-10T16:50:44.435-04:00  INFO 29080 --- [clientes] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-10T16:50:44.444-04:00  INFO 29080 --- [clientes] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-10T19:08:19.185-04:00  INFO 10912 --- [clientes] [main] Veterinaria.Cliente.ClienteApplication   : Starting ClienteApplication using Java 21.0.11 with PID 10912 (D:\AnalistaProgramador\fullstack\claude\veterinaria\Cliente\target\classes started by Diego in D:\AnalistaProgramador\fullstack\claude\veterinaria\Cliente)
+2026-05-10T19:08:19.188-04:00  INFO 10912 --- [clientes] [main] Veterinaria.Cliente.ClienteApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-05-10T19:08:19.769-04:00  INFO 10912 --- [clientes] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-10T19:08:19.818-04:00  INFO 10912 --- [clientes] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 1 JPA repository interface.
+2026-05-10T19:08:20.306-04:00  INFO 10912 --- [clientes] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-05-10T19:08:20.319-04:00  INFO 10912 --- [clientes] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-10T19:08:20.319-04:00  INFO 10912 --- [clientes] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.20]
+2026-05-10T19:08:20.381-04:00  INFO 10912 --- [clientes] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-10T19:08:20.381-04:00  INFO 10912 --- [clientes] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1158 ms
+2026-05-10T19:08:20.489-04:00  INFO 10912 --- [clientes] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-10T19:08:20.825-04:00  INFO 10912 --- [clientes] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@79be91eb
+2026-05-10T19:08:20.827-04:00  INFO 10912 --- [clientes] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-10T19:08:20.905-04:00  INFO 10912 --- [clientes] [main] o.f.c.internal.license.VersionPrinter    : Flyway Community Edition 9.22.3 by Redgate
+2026-05-10T19:08:20.906-04:00  INFO 10912 --- [clientes] [main] o.f.c.internal.license.VersionPrinter    : See release notes here: https://rd.gt/416ObMi
+2026-05-10T19:08:20.906-04:00  INFO 10912 --- [clientes] [main] o.f.c.internal.license.VersionPrinter    : 
+2026-05-10T19:08:20.923-04:00  INFO 10912 --- [clientes] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/clientes_db (MySQL 8.4)
+2026-05-10T19:08:20.932-04:00  WARN 10912 --- [clientes] [main] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: MySQL 8.4 is newer than this version of Flyway and support has not been tested. The latest supported version of MySQL is 8.0.
+2026-05-10T19:08:20.963-04:00  INFO 10912 --- [clientes] [main] o.f.core.internal.command.DbValidate     : Successfully validated 1 migration (execution time 00:00.022s)
+2026-05-10T19:08:20.974-04:00  INFO 10912 --- [clientes] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `clientes_db`: 1
+2026-05-10T19:08:20.976-04:00  INFO 10912 --- [clientes] [main] o.f.core.internal.command.DbMigrate      : Schema `clientes_db` is up to date. No migration necessary.
+2026-05-10T19:08:21.052-04:00  INFO 10912 --- [clientes] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-10T19:08:21.111-04:00  INFO 10912 --- [clientes] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-05-10T19:08:21.149-04:00  INFO 10912 --- [clientes] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-10T19:08:21.366-04:00  INFO 10912 --- [clientes] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-10T19:08:22.159-04:00  INFO 10912 --- [clientes] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-10T19:08:22.162-04:00  INFO 10912 --- [clientes] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-10T19:08:22.445-04:00  WARN 10912 --- [clientes] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-10T19:08:22.461-04:00  WARN 10912 --- [clientes] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 88784cd2-56df-45ac-a6b4-5f2dce1e99d6
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-05-10T19:08:22.691-04:00  INFO 10912 --- [clientes] [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@66c91224, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4ffcb1bd, org.springframework.security.web.context.SecurityContextHolderFilter@510e0dd2, org.springframework.security.web.header.HeaderWriterFilter@6f8035d6, org.springframework.web.filter.CorsFilter@5be8a92c, org.springframework.security.web.authentication.logout.LogoutFilter@19a544cd, Veterinaria.Cliente.security.JwtAuthenticationFilter@4342c13, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1f7853af, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2c56e044, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@51d80f6e, org.springframework.security.web.session.SessionManagementFilter@17d25e1d, org.springframework.security.web.access.ExceptionTranslationFilter@5ac35b17, org.springframework.security.web.access.intercept.AuthorizationFilter@14c7ab73]
+2026-05-10T19:08:22.949-04:00  INFO 10912 --- [clientes] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path ''
+2026-05-10T19:08:22.958-04:00  INFO 10912 --- [clientes] [main] Veterinaria.Cliente.ClienteApplication   : Started ClienteApplication in 4.201 seconds (process running for 4.787)
+2026-05-10T19:12:30.609-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-10T19:12:30.610-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-10T19:12:30.611-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-05-10T19:12:30.708-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-2] V.Cliente.Controller.AuthController      : Solicitud de login recibida para usuario: admin
+2026-05-10T19:12:30.708-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-2] V.Cliente.Service.AuthService            : Intentando autenticar usuario: admin
+2026-05-10T19:12:30.708-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-2] V.Cliente.Service.AuthService            : Autenticación exitosa para usuario: admin
+2026-05-10T19:12:30.745-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-2] V.Cliente.Controller.AuthController      : Token generado exitosamente para usuario: admin
+2026-05-10T19:13:54.036-04:00 ERROR 10912 --- [clientes] [http-nio-8080-exec-5] V.C.Exception.GlobalExceptionHandler     : Error inesperado en ruta: /api/v1/clientes%20%20 - No static resource api/v1/clientes%20%20.
+2026-05-10T19:15:51.559-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-10] V.Cliente.Controller.ClienteController   : GET /api/v1/clientes - Listando todos los clientes
+2026-05-10T19:15:51.559-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-10] V.Cliente.Service.ClienteService         : Listando todos los clientes
+2026-05-10T19:15:51.698-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-10] V.Cliente.Service.ClienteService         : Total de clientes encontrados: 5
+2026-05-10T19:16:07.415-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-7] V.Cliente.Controller.ClienteController   : GET /api/v1/clientes/2 - Buscando cliente
+2026-05-10T19:16:07.415-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-7] V.Cliente.Service.ClienteService         : Buscando cliente con id: 2
+2026-05-10T19:16:20.686-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-8] V.Cliente.Controller.ClienteController   : GET /api/v1/clientes - Listando todos los clientes
+2026-05-10T19:16:20.686-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-8] V.Cliente.Service.ClienteService         : Listando todos los clientes
+2026-05-10T19:16:20.690-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-8] V.Cliente.Service.ClienteService         : Total de clientes encontrados: 5
+2026-05-10T19:17:11.985-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-1] V.Cliente.Controller.ClienteController   : GET /api/v1/clientes - Listando todos los clientes
+2026-05-10T19:17:11.986-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-1] V.Cliente.Service.ClienteService         : Listando todos los clientes
+2026-05-10T19:17:11.990-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-1] V.Cliente.Service.ClienteService         : Total de clientes encontrados: 5
+2026-05-10T19:17:22.784-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-2] V.Cliente.Controller.ClienteController   : GET /api/v1/clientes/rut/98765432-1 - Buscando cliente por RUT
+2026-05-10T19:17:22.785-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-2] V.Cliente.Service.ClienteService         : Buscando cliente con RUT: 98765432-1
+2026-05-10T19:17:32.923-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-3] V.Cliente.Controller.ClienteController   : GET /api/v1/clientes - Listando todos los clientes
+2026-05-10T19:17:32.923-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-3] V.Cliente.Service.ClienteService         : Listando todos los clientes
+2026-05-10T19:17:32.928-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-3] V.Cliente.Service.ClienteService         : Total de clientes encontrados: 5
+2026-05-10T19:17:43.118-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-4] V.Cliente.Controller.ClienteController   : GET /api/v1/clientes/rut/11223344-5 - Buscando cliente por RUT
+2026-05-10T19:17:43.119-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-4] V.Cliente.Service.ClienteService         : Buscando cliente con RUT: 11223344-5
+2026-05-10T19:19:56.702-04:00  WARN 10912 --- [clientes] [http-nio-8080-exec-6] V.C.Exception.GlobalExceptionHandler     : Error de validación en ruta: /api/v1/clientes
+2026-05-10T19:20:39.099-04:00 ERROR 10912 --- [clientes] [http-nio-8080-exec-8] V.C.Exception.GlobalExceptionHandler     : Error inesperado en ruta: /api/v1/clientes - JSON parse error: Cannot deserialize value of type `java.time.LocalDate` from String "19-05-2026": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '19-05-2026' could not be parsed at index 0
+2026-05-10T19:21:00.426-04:00 ERROR 10912 --- [clientes] [http-nio-8080-exec-1] V.C.Exception.GlobalExceptionHandler     : Error inesperado en ruta: /api/v1/clientes - JSON parse error: Cannot deserialize value of type `java.time.LocalDate` from String "19-05-2026": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '19-05-2026' could not be parsed at index 0
+2026-05-10T19:21:30.540-04:00 ERROR 10912 --- [clientes] [http-nio-8080-exec-3] V.C.Exception.GlobalExceptionHandler     : Error inesperado en ruta: /api/v1/clientes - JSON parse error: Cannot deserialize value of type `java.time.LocalDate` from String "19-05-2026": Failed to deserialize java.time.LocalDate: (java.time.format.DateTimeParseException) Text '19-05-2026' could not be parsed at index 0
+2026-05-10T19:23:27.066-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-5] V.Cliente.Controller.ClienteController   : POST /api/v1/clientes - Creando nuevo cliente con RUT: 20382625-7
+2026-05-10T19:23:27.066-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-5] V.Cliente.Service.ClienteService         : Guardando nuevo cliente con RUT: 20382625-7
+2026-05-10T19:23:27.112-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-5] V.Cliente.Service.ClienteService         : Cliente guardado correctamente con id: 6
+2026-05-10T19:25:23.145-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-7] V.Cliente.Controller.ClienteController   : PUT /api/v1/clientes/6 - Actualizando cliente
+2026-05-10T19:25:23.146-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-7] V.Cliente.Service.ClienteService         : Actualizando cliente con id: 6
+2026-05-10T19:25:23.146-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-7] V.Cliente.Service.ClienteService         : Buscando cliente con id: 6
+2026-05-10T19:25:23.167-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-7] V.Cliente.Service.ClienteService         : Cliente actualizado correctamente con id: 6
+2026-05-10T19:26:03.159-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-8] V.Cliente.Controller.ClienteController   : DELETE /api/v1/clientes/6 - Eliminando cliente
+2026-05-10T19:26:03.159-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-8] V.Cliente.Service.ClienteService         : Eliminando cliente con id: 6
+2026-05-10T19:26:03.400-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-8] V.Cliente.Service.ClienteService         : Cliente eliminado correctamente con id: 6
+2026-05-10T19:26:09.889-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-9] V.Cliente.Controller.ClienteController   : GET /api/v1/clientes - Listando todos los clientes
+2026-05-10T19:26:09.889-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-9] V.Cliente.Service.ClienteService         : Listando todos los clientes
+2026-05-10T19:26:09.893-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-9] V.Cliente.Service.ClienteService         : Total de clientes encontrados: 5
+2026-05-10T19:26:47.191-04:00 ERROR 10912 --- [clientes] [http-nio-8080-exec-1] V.C.Exception.GlobalExceptionHandler     : Error inesperado en ruta: /api/v1/mascotas - No static resource api/v1/mascotas.
+2026-05-10T20:08:15.091-04:00 ERROR 10912 --- [clientes] [http-nio-8080-exec-5] V.C.Exception.GlobalExceptionHandler     : Error inesperado en ruta: /api/v1/cliente - No static resource api/v1/cliente.
+2026-05-10T20:08:19.843-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-6] V.Cliente.Controller.ClienteController   : GET /api/v1/clientes - Listando todos los clientes
+2026-05-10T20:08:19.843-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-6] V.Cliente.Service.ClienteService         : Listando todos los clientes
+2026-05-10T20:08:19.848-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-6] V.Cliente.Service.ClienteService         : Total de clientes encontrados: 5
+2026-05-10T20:09:03.881-04:00 ERROR 10912 --- [clientes] [http-nio-8080-exec-8] V.C.Exception.GlobalExceptionHandler     : Error inesperado en ruta: /auth/login - Request method 'GET' is not supported
+2026-05-10T20:09:15.353-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-1] V.Cliente.Controller.AuthController      : Solicitud de login recibida para usuario: admin
+2026-05-10T20:09:15.353-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-1] V.Cliente.Service.AuthService            : Intentando autenticar usuario: admin
+2026-05-10T20:09:15.353-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-1] V.Cliente.Service.AuthService            : Autenticación exitosa para usuario: admin
+2026-05-10T20:09:15.354-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-1] V.Cliente.Controller.AuthController      : Token generado exitosamente para usuario: admin
+2026-05-10T20:09:53.085-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-2] V.Cliente.Controller.ClienteController   : GET /api/v1/clientes - Listando todos los clientes
+2026-05-10T20:09:53.086-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-2] V.Cliente.Service.ClienteService         : Listando todos los clientes
+2026-05-10T20:09:53.090-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-2] V.Cliente.Service.ClienteService         : Total de clientes encontrados: 5
+2026-05-10T20:10:01.783-04:00 ERROR 10912 --- [clientes] [http-nio-8080-exec-3] V.C.Exception.GlobalExceptionHandler     : Error inesperado en ruta: /api/v1/mascotas - No static resource api/v1/mascotas.
+2026-05-10T20:21:30.655-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-6] V.Cliente.Controller.ClienteController   : GET /api/v1/clientes - Listando todos los clientes
+2026-05-10T20:21:30.655-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-6] V.Cliente.Service.ClienteService         : Listando todos los clientes
+2026-05-10T20:21:30.659-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-6] V.Cliente.Service.ClienteService         : Total de clientes encontrados: 5
+2026-05-10T20:22:03.237-04:00 ERROR 10912 --- [clientes] [http-nio-8080-exec-8] V.C.Exception.GlobalExceptionHandler     : Error inesperado en ruta: /auth/login - Request method 'GET' is not supported
+2026-05-10T20:22:14.764-04:00 ERROR 10912 --- [clientes] [http-nio-8080-exec-1] V.C.Exception.GlobalExceptionHandler     : Error inesperado en ruta: /auth/login - Request method 'GET' is not supported
+2026-05-10T20:22:22.756-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-3] V.Cliente.Controller.AuthController      : Solicitud de login recibida para usuario: admin
+2026-05-10T20:22:22.757-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-3] V.Cliente.Service.AuthService            : Intentando autenticar usuario: admin
+2026-05-10T20:22:22.757-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-3] V.Cliente.Service.AuthService            : Autenticación exitosa para usuario: admin
+2026-05-10T20:22:22.757-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-3] V.Cliente.Controller.AuthController      : Token generado exitosamente para usuario: admin
+2026-05-10T20:22:49.611-04:00 ERROR 10912 --- [clientes] [http-nio-8080-exec-4] V.C.Exception.GlobalExceptionHandler     : Error inesperado en ruta: /auth/clientes - No static resource auth/clientes.
+2026-05-10T20:23:00.631-04:00 ERROR 10912 --- [clientes] [http-nio-8080-exec-10] V.C.Exception.GlobalExceptionHandler     : Error inesperado en ruta: /auth/clientes - No static resource auth/clientes.
+2026-05-10T20:23:13.253-04:00 ERROR 10912 --- [clientes] [http-nio-8080-exec-7] V.C.Exception.GlobalExceptionHandler     : Error inesperado en ruta: /auth/clientes - No static resource auth/clientes.
+2026-05-10T20:23:16.606-04:00 ERROR 10912 --- [clientes] [http-nio-8080-exec-9] V.C.Exception.GlobalExceptionHandler     : Error inesperado en ruta: /auth/clientes - No static resource auth/clientes.
+2026-05-10T20:23:33.841-04:00  WARN 10912 --- [clientes] [http-nio-8080-exec-2] V.C.Exception.GlobalExceptionHandler     : Error de validación en ruta: /api/v1/clientes
+2026-05-10T20:23:38.154-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-4] V.Cliente.Controller.ClienteController   : GET /api/v1/clientes - Listando todos los clientes
+2026-05-10T20:23:38.154-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-4] V.Cliente.Service.ClienteService         : Listando todos los clientes
+2026-05-10T20:23:38.158-04:00  INFO 10912 --- [clientes] [http-nio-8080-exec-4] V.Cliente.Service.ClienteService         : Total de clientes encontrados: 5
+2026-05-10T20:28:37.246-04:00  INFO 10912 --- [clientes] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-10T20:28:37.250-04:00  INFO 10912 --- [clientes] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-10T20:28:37.252-04:00  INFO 10912 --- [clientes] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
