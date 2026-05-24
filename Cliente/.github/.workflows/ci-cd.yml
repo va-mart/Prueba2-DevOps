@@ -1,0 +1,166 @@
+name: CI/CD - Veterinaria Cliente
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+env:
+  IMAGE_NAME: veterinaria-cliente
+  REGISTRY: ghcr.io
+
+jobs:
+  # ─── JOB 1: Compilar y ejecutar tests con cobertura JaCoCo ───────────────────
+  test:
+    name: Build & Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Configurar Java 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Compilar y ejecutar tests con JaCoCo
+        # FALLA si la cobertura de líneas es inferior al 60% (regla JaCoCo en pom.xml)
+        run: |
+          chmod +x mvnw
+          ./mvnw clean verify -B
+
+      - name: Publicar reporte JaCoCo como artefacto
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: jacoco-report
+          path: target/site/jacoco/
+          retention-days: 7
+
+  # ─── JOB 2: Análisis de seguridad con Snyk ───────────────────────────────────
+  security:
+    name: Security Analysis (Snyk)
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Configurar Java 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Escaneo de vulnerabilidades con Snyk
+        # FALLA si se detectan vulnerabilidades HIGH o CRITICAL en las dependencias
+        uses: snyk/actions/maven@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --severity-threshold=high
+
+      - name: Publicar resultados SARIF en GitHub Security
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: snyk.sarif
+        continue-on-error: true
+
+  # ─── JOB 3: Construir y publicar imagen Docker ───────────────────────────────
+  docker:
+    name: Docker Build & Push
+    runs-on: ubuntu-latest
+    needs: [test, security]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Configurar Java 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Compilar JAR
+        run: |
+          chmod +x mvnw
+          ./mvnw clean package -DskipTests -B
+
+      - name: Configurar Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login en GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Construir y publicar imagen Docker
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: |
+            ${{ env.REGISTRY }}/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:latest
+            ${{ env.REGISTRY }}/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  # ─── JOB 4: Despliegue con Docker Compose ────────────────────────────────────
+  deploy:
+    name: Deploy with Docker Compose
+    runs-on: ubuntu-latest
+    needs: docker
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Desplegar con Docker Compose
+        env:
+          DB_NAME: clientes_db
+          DB_USERNAME: root
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
+        run: |
+          docker compose up -d --build
+          docker compose ps
+
+      - name: Verificar que la aplicación arrancó correctamente
+        # FALLA si la aplicación no responde en 2 minutos (12 intentos × 10 segundos)
+        run: |
+          echo "Esperando que la aplicación esté disponible..."
+          for i in $(seq 1 12); do
+            HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:8080/api/v1/clientes 2>/dev/null || echo "000")
+            if [ "$HTTP_CODE" = "403" ] || [ "$HTTP_CODE" = "401" ]; then
+              echo "Aplicación disponible (HTTP $HTTP_CODE - seguridad JWT activa) en el intento $i"
+              docker compose ps
+              exit 0
+            fi
+            echo "Intento $i/12 - HTTP $HTTP_CODE - esperando 10 segundos..."
+            sleep 10
+          done
+          echo "ERROR: La aplicación no respondió después de 2 minutos"
+          docker compose logs app --tail=50
+          exit 1
+
+      - name: Mostrar logs y estado final
+        if: always()
+        run: |
+          docker compose ps
+          docker compose logs app --tail=20
